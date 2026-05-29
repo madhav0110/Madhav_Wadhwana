@@ -14,7 +14,9 @@ export default function Navbar() {
   const [active, setActive] = useState('home')
 
   useEffect(() => {
-    const sections = navItems.map((item) => document.querySelector(item.href)).filter(Boolean)
+    const sections = navItems
+      .map((item) => document.querySelector(item.href))
+      .filter((section): section is Element => section !== null)
     const observer = new IntersectionObserver(
       (entries) => entries.forEach((entry) => entry.isIntersecting && setActive(entry.target.id)),
       { rootMargin: '-35% 0px -55% 0px' },

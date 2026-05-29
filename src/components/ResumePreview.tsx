@@ -6,7 +6,7 @@ type ResumePreviewProps = {
   onClose: () => void
 }
 
-const resumePath = '/resume.pdf'
+const resumePath = `${import.meta.env.BASE_URL}resume.pdf`
 
 export default function ResumePreview({ open, onClose }: ResumePreviewProps) {
   useEffect(() => {
