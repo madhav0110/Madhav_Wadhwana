@@ -16,7 +16,7 @@ export default function Philosophy() {
         <h2 className="mx-auto mt-4 max-w-4xl text-[clamp(2.2rem,6vw,4.8rem)] font-semibold leading-none tracking-[-0.055em]">I build where intelligence meets usability.</h2>
       </Reveal>
       <div className="mt-12 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-        {values.map((value, index) => <Reveal key={value.title} delay={index * 0.07} className="premium-card rounded-3xl p-6"><value.icon className="text-cyan-200" /><h3 className="mt-8 text-xl font-semibold">{value.title}</h3><p className="mt-3 leading-7 text-slate-400">{value.copy}</p></Reveal>)}
+        {values.map((value, index) => <Reveal key={value.title} delay={index * 0.07} className="premium-card rounded-3xl p-6"><value.icon className="text-amber-700" /><h3 className="mt-8 text-xl font-semibold">{value.title}</h3><p className="mt-3 leading-7 text-stone-600">{value.copy}</p></Reveal>)}
       </div>
     </section>
   )

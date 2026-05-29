@@ -3,14 +3,15 @@
 @tailwind utilities;
 
 :root {
-  color-scheme: dark;
-  --background: #0b0d12;
-  --surface: #121722;
-  --surface-elevated: #171d2a;
-  --text-primary: #f5f7fb;
-  --text-secondary: #a9b2c3;
-  --accent: #75e3ff;
-  --accent-secondary: #9b8cff;
+  color-scheme: light;
+  --background: #f6efe3;
+  --surface: #fff9ed;
+  --surface-elevated: #fffdf7;
+  --ink: #17110a;
+  --muted: #6f6253;
+  --line: rgba(39, 29, 18, 0.16);
+  --accent: #b87905;
+  --accent-soft: #f3b43f;
 }
 
 * { box-sizing: border-box; }
@@ -21,33 +22,52 @@ body {
   min-height: 100vh;
   overflow-x: hidden;
   background:
-    radial-gradient(circle at 20% 0%, rgba(117, 227, 255, 0.11), transparent 32rem),
-    radial-gradient(circle at 80% 10%, rgba(155, 140, 255, 0.12), transparent 34rem),
-    linear-gradient(180deg, #0b0d12 0%, #080a0f 55%, #0b0d12 100%);
-  color: var(--text-primary);
+    radial-gradient(circle at 20% -10%, rgba(243, 180, 63, 0.25), transparent 28rem),
+    radial-gradient(circle at 86% 6%, rgba(120, 77, 17, 0.10), transparent 24rem),
+    linear-gradient(180deg, #fff8ea 0%, #f6efe3 48%, #efe1ca 100%);
+  color: var(--ink);
   font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
 button, a { -webkit-tap-highlight-color: transparent; }
 a { color: inherit; text-decoration: none; }
 
-::selection { background: rgba(117, 227, 255, 0.26); color: white; }
+::selection { background: rgba(184, 121, 5, 0.22); color: #17110a; }
 
 .section-shell { @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8; }
 .section-pad { @apply py-20 sm:py-24 lg:py-32; }
-.eyebrow { @apply font-mono text-[0.72rem] uppercase tracking-[0.24em] text-cyan-200/80; }
-.gradient-text { @apply bg-gradient-to-br from-white via-slate-100 to-slate-400 bg-clip-text text-transparent; }
-.premium-card { @apply border border-white/10 bg-white/[0.045] shadow-2xl shadow-black/30 backdrop-blur-xl; }
-.focus-ring { @apply focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-cyan-200; }
+.eyebrow { @apply font-mono text-[0.72rem] uppercase tracking-[0.24em] text-amber-700; }
+.gradient-text { @apply text-stone-950; }
+.premium-card { @apply border border-stone-900/15 bg-[#fffaf0]/75 shadow-[0_24px_80px_rgba(80,54,20,0.10)] backdrop-blur-xl; }
+.focus-ring { @apply focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-amber-600; }
+.cave-button { @apply focus-ring inline-flex min-h-12 items-center justify-center gap-2 rounded-lg border border-stone-900/15 bg-[#fffaf0] px-5 font-mono text-sm font-semibold text-stone-950 shadow-sm transition hover:-translate-y-0.5 hover:border-amber-700/40 hover:bg-amber-50; }
+.cave-button-primary { @apply focus-ring inline-flex min-h-12 items-center justify-center gap-2 rounded-lg bg-stone-950 px-5 font-mono text-sm font-semibold text-amber-50 shadow-[0_16px_40px_rgba(39,29,18,0.18)] transition hover:-translate-y-0.5 hover:bg-stone-800; }
+.cave-chip { @apply inline-flex items-center rounded-full border border-dashed border-stone-900/20 bg-[#fffaf0]/70 px-3 py-1.5 font-mono text-[0.68rem] uppercase tracking-[0.16em] text-stone-600; }
+.cave-rule { @apply border-t border-dashed border-stone-900/20; }
+.text-muted { color: var(--muted); }
 
 .noise::before {
   content: "";
   position: fixed;
   inset: 0;
   pointer-events: none;
-  opacity: 0.045;
+  opacity: 0.08;
   z-index: 60;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.7'/%3E%3C/svg%3E");
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.45'/%3E%3C/svg%3E");
+}
+
+.noise::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+  background-image:
+    linear-gradient(rgba(39, 29, 18, 0.055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(39, 29, 18, 0.055) 1px, transparent 1px);
+  background-size: 54px 54px;
+  mask-image: linear-gradient(to bottom, black, transparent 78%);
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -7,34 +7,34 @@ export default function Projects() {
     <section id="work" className="section-shell section-pad">
       <Reveal className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
         <div className="max-w-3xl">
-          <p className="eyebrow">Featured work</p>
-          <h2 className="mt-4 text-[clamp(2.2rem,6vw,4.8rem)] font-semibold leading-none tracking-[-0.055em]">Case studies with system proof.</h2>
+          <p className="eyebrow">§ 01 · Featured work</p>
+          <h2 className="mt-4 text-[clamp(2.4rem,6vw,5rem)] font-semibold leading-none tracking-[-0.06em] text-stone-950">Four projects. One applied-AI thesis.</h2>
         </div>
-        <p className="max-w-md leading-7 text-slate-400">Each project is framed around the problem, role, stack, and product surface — because applied AI is only valuable when the workflow works.</p>
+        <p className="max-w-md leading-7 text-stone-600">A Caveman-inspired case-study grid: numbered cards, tight copy, visible proof, and warm product-system restraint instead of neon darkness.</p>
       </Reveal>
-      <div className="mt-12 grid gap-6 lg:grid-cols-2">
+      <div className="mt-12 grid gap-5 lg:grid-cols-4">
         {projects.map((project, index) => (
           <Reveal key={project.title} delay={index * 0.08}>
-            <article className="premium-card group relative min-h-full overflow-hidden rounded-[2rem] p-5 transition duration-300 hover:-translate-y-2 hover:border-white/20">
-              <div className={`absolute inset-0 bg-gradient-to-br ${project.accent} opacity-80 transition group-hover:opacity-100`} />
-              <div className="relative">
-                <div className="mb-6 overflow-hidden rounded-3xl border border-white/10 bg-black/24 p-4">
-                  <div className="mb-4 flex items-center gap-2"><span className="h-2.5 w-2.5 rounded-full bg-rose-300" /><span className="h-2.5 w-2.5 rounded-full bg-amber-300" /><span className="h-2.5 w-2.5 rounded-full bg-emerald-300" /></div>
-                  <div className="grid gap-3 sm:grid-cols-3">
-                    {project.metrics.map((metric) => <div key={metric} className="rounded-2xl border border-white/10 bg-white/6 p-4 font-mono text-xs uppercase tracking-[0.14em] text-slate-300">{metric}</div>)}
-                  </div>
-                  <div className="mt-4 h-24 rounded-2xl bg-[linear-gradient(90deg,rgba(117,227,255,.18),rgba(155,140,255,.08)),repeating-linear-gradient(90deg,rgba(255,255,255,.08)_0_1px,transparent_1px_18px)] transition duration-500 group-hover:scale-[1.02]" />
-                </div>
-                <h3 className="text-3xl font-semibold tracking-tight">{project.title}</h3>
-                <p className="mt-3 leading-7 text-slate-300">{project.description}</p>
-                <dl className="mt-6 grid gap-4 text-sm sm:grid-cols-3">
-                  <div><dt className="font-mono text-[0.65rem] uppercase tracking-[0.18em] text-slate-500">Problem</dt><dd className="mt-2 text-slate-300">{project.problem}</dd></div>
-                  <div><dt className="font-mono text-[0.65rem] uppercase tracking-[0.18em] text-slate-500">Role</dt><dd className="mt-2 text-slate-300">{project.role}</dd></div>
-                  <div><dt className="font-mono text-[0.65rem] uppercase tracking-[0.18em] text-slate-500">Tech stack</dt><dd className="mt-2 text-slate-300">{project.stack}</dd></div>
-                </dl>
-                <div className="mt-6 flex flex-wrap gap-2">{project.tags.map((tag) => <span key={tag} className="rounded-full border border-white/10 bg-black/20 px-3 py-1.5 font-mono text-xs text-slate-300">{tag}</span>)}</div>
-                <a href="#contact" className="focus-ring mt-7 inline-flex min-h-11 items-center gap-2 rounded-full border border-white/10 bg-white/8 px-4 text-sm font-medium text-white transition hover:bg-white/[0.12]" aria-label={`${project.cta} for ${project.title}`}>{project.cta} <ArrowUpRight size={16} /></a>
+            <article className="premium-card group relative min-h-full overflow-hidden rounded-xl p-5 transition duration-300 hover:-translate-y-1 hover:border-amber-700/45">
+              <div className="mb-8 flex items-center justify-between font-mono text-xs uppercase tracking-[0.18em] text-stone-500">
+                <span className="font-bold text-stone-950">0{index + 1}</span>
+                <span>{index === 0 ? 'flagship' : index === 1 ? 'platform' : index === 2 ? 'visual' : 'security'}</span>
               </div>
+              <h3 className="text-3xl font-semibold tracking-[-0.045em] text-stone-950">{project.title}</h3>
+              <p className="mt-5 min-h-32 leading-7 text-stone-700">{project.description}</p>
+              <div className="cave-rule my-6" />
+              <dl className="space-y-3 font-mono text-xs uppercase tracking-[0.14em]">
+                {project.metrics.map((metric, metricIndex) => (
+                  <div key={metric} className="flex justify-between gap-4 border-b border-dashed border-stone-900/15 pb-2">
+                    <dt className="text-stone-500">{metricIndex === 0 ? 'Signal' : metricIndex === 1 ? 'Mode' : 'Output'}</dt>
+                    <dd className="text-right font-bold text-stone-950">{metric}</dd>
+                  </div>
+                ))}
+              </dl>
+              <div className="mt-6 flex flex-wrap gap-2">
+                {project.tags.slice(0, 3).map((tag) => <span key={tag} className="rounded-md border border-stone-900/15 bg-amber-50/70 px-2.5 py-1.5 font-mono text-[0.66rem] uppercase tracking-[0.12em] text-stone-600">{tag}</span>)}
+              </div>
+              <a href="#contact" className="focus-ring mt-7 inline-flex min-h-11 items-center gap-2 rounded-lg border-b border-stone-950 font-mono text-sm font-semibold text-stone-950" aria-label={`${project.cta} for ${project.title}`}>{project.cta} <ArrowUpRight size={16} /></a>
             </article>
           </Reveal>
         ))}
