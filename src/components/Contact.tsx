@@ -1,4 +1,4 @@
-import { Download, Eye, Github, Linkedin, Mail } from 'lucide-react'
+import { Download, Eye, Mail } from 'lucide-react'
 import { Reveal } from './Reveal'
 import { siteLinks } from '../config/site'
 
@@ -15,8 +15,8 @@ export default function Contact({ onPreviewResume }: ContactProps) {
         <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-slate-300">I’m open to applied AI roles, ML engineering opportunities, full-stack AI product work, and early-stage builds that need both systems thinking and interface execution.</p>
         <div className="mt-10 flex flex-col justify-center gap-3 sm:flex-row sm:flex-wrap">
           <a href={siteLinks.email} className="focus-ring inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-white px-5 font-medium text-slate-950"><Mail size={18} /> Email Madhav</a>
-          <a href="https://www.linkedin.com/" target="_blank" rel="noreferrer" className="focus-ring inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-white/10 bg-white/8 px-5 font-medium text-white"><Linkedin size={18} /> Connect on LinkedIn</a>
-          <a href={siteLinks.github} target="_blank" rel="noreferrer" className="focus-ring inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-white/10 bg-white/8 px-5 font-medium text-white"><Github size={18} /> View GitHub</a>
+          <a href="https://www.linkedin.com/" target="_blank" rel="noreferrer" className="focus-ring inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-white/10 bg-white/8 px-5 font-medium text-white"><span aria-hidden="true" className="font-mono text-sm">in</span> Connect on LinkedIn</a>
+          <a href={siteLinks.github} target="_blank" rel="noreferrer" className="focus-ring inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-white/10 bg-white/8 px-5 font-medium text-white"><span aria-hidden="true" className="font-mono text-sm">GH</span> View GitHub</a>
           <button type="button" onClick={onPreviewResume} className="focus-ring inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-cyan-200/20 bg-cyan-200/10 px-5 font-medium text-cyan-50" aria-label="Preview Madhav Wadhwana resume PDF"><Eye size={18} /> Preview Resume</button>
           <a href={siteLinks.resume} download className="focus-ring inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-white/10 bg-white/8 px-5 font-medium text-white"><Download size={18} /> Download Resume</a>
         </div>

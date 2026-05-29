@@ -1,4 +1,4 @@
-import { ArrowRight, Download, Eye, Github } from 'lucide-react'
+import { ArrowRight, Download, Eye } from 'lucide-react'
 import { motion } from 'framer-motion'
 import ParticleHero from './ParticleHero'
 import { siteLinks } from '../config/site'
@@ -25,7 +25,7 @@ export default function Hero({ onPreviewResume }: HeroProps) {
             <a href="#work" className="focus-ring inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-white px-5 font-medium text-slate-950 transition hover:-translate-y-0.5 hover:bg-cyan-100">View AI Case Studies <ArrowRight size={18} /></a>
             <button type="button" onClick={onPreviewResume} className="focus-ring inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-cyan-200/20 bg-cyan-200/10 px-5 font-medium text-cyan-50 transition hover:-translate-y-0.5 hover:bg-cyan-200/15" aria-label="Preview Madhav Wadhwana resume PDF"><Eye size={18} /> Preview Resume</button>
             <a href={siteLinks.resume} download className="focus-ring inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-white/10 bg-white/6 px-5 font-medium text-white transition hover:-translate-y-0.5 hover:bg-white/10"><Download size={18} /> Download Resume</a>
-            <a href={siteLinks.github} target="_blank" rel="noreferrer" className="focus-ring inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-white/10 bg-white/6 px-5 font-medium text-white transition hover:-translate-y-0.5 hover:bg-white/10"><Github size={18} /> See GitHub</a>
+            <a href={siteLinks.github} target="_blank" rel="noreferrer" className="focus-ring inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-white/10 bg-white/6 px-5 font-medium text-white transition hover:-translate-y-0.5 hover:bg-white/10"><span aria-hidden="true" className="font-mono text-sm">GH</span> See GitHub</a>
           </motion.div>
         </div>
         <ParticleHero />
